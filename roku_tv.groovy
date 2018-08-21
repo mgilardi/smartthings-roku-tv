@@ -50,11 +50,11 @@ metadata {
     }
 
     standardTile("plex", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"Plex", action:"plex", icon:"st.Entertainment.electronics7"
+      state "default", label:"Plex", action:"plex", icon:"st.Electronics.electronics7"
     }
 
     standardTile("youtube", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"YouTube", action:"youtube", icon:"st.Entertainment.electronics8"
+      state "default", label:"YouTube", action:"youtube", icon:"st.Electronics.electronics8"
     }
 
     standardTile("hdmi1", "device.switch", inactiveLabel: false, decoration: "flat") {
