@@ -13,6 +13,7 @@ metadata {
     command "volume_mute"
     command "netflix"
     command "plex"
+    command "youtube"
     command "hdmi1"
     command "hdmi2"
     command "hdmi3"
@@ -45,31 +46,35 @@ metadata {
     }
 
     standardTile("netflix", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"Netflix", action:"netflix", icon:"st.Electronics.electronics12"
+      state "default", label:"Netflix", action:"netflix", icon:"st.Electronics.electronics9"
     }
 
     standardTile("plex", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"Plex", action:"plex", icon:"st.Electronics.electronics12"
+      state "default", label:"Plex", action:"plex", icon:"st.Entertainment.electronics7"
+    }
+
+    standardTile("youtube", "device.switch", inactiveLabel: false, decoration: "flat") {
+      state "default", label:"YouTube", action:"youtube", icon:"st.Entertainment.electronics8"
     }
 
     standardTile("hdmi1", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"HDMI 1", action:"hdmi1", icon:"st.Electronics.electronics12"
+      state "default", label:"HDMI 1", action:"hdmi1", icon:"st.Electronics.electronics6"
     }
 
     standardTile("hdmi2", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"HDMI 2", action:"hdmi2", icon:"st.Electronics.electronics12"
+      state "default", label:"HDMI 2", action:"hdmi2", icon:"st.Electronics.electronics6"
     }
 
     standardTile("hdmi3", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"HDMI 3", action:"hdmi3", icon:"st.Electronics.electronics12"
+      state "default", label:"HDMI 3", action:"hdmi3", icon:"st.Electronics.electronics6"
     }
 
     standardTile("hdmi4", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"HDMI 4", action:"hdmi4", icon:"st.Electronics.electronics12"
+      state "default", label:"HDMI 4", action:"hdmi4", icon:"st.Electronics.electronics6"
     }
 
     main "button"
-    details(["button", "refresh", "volume_mute", "volume_down", "volume_up", "hdmi1", "hdmi2", "hdmi3", "hdmi4", "netflix", "plex"])
+    details(["button", "refresh", "volume_mute", "volume_down", "volume_up", "youtube", "netflix", "plex", "hdmi1", "hdmi2", "hdmi3", "hdmi4"])
   }
 }
 
@@ -127,6 +132,10 @@ def netflix() {
 
 def plex() {
   launchApp('13535')
+}
+
+def youtube() {
+  launchApp('837')
 }
 
 def hdmi1() {
