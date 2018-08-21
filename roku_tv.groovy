@@ -4,15 +4,15 @@ preferences {
 }
 
 metadata {
-  definition (name: "Roku TV", namespace: "ericboehs", author: "Eric Boehs") {
+  definition (name: "Roku TV", namespace: "mgilardi", author: "Michael Gilardi") {
     capability "Switch"
     capability "Polling"
     capability "Refresh"
     command "volume_up"
     command "volume_down"
     command "volume_mute"
-    command "nickjr"
-    command "disneyjr"
+    command "netflix"
+    command "plex"
     command "hdmi1"
     command "hdmi2"
     command "hdmi3"
@@ -44,12 +44,12 @@ metadata {
       state "default", label:"Mute", action:"volume_mute", icon:"st.custom.sonos.muted"
     }
 
-    standardTile("nickjr", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"Nick Jr.", action:"nickjr", icon:"st.Electronics.electronics12"
+    standardTile("netflix", "device.switch", inactiveLabel: false, decoration: "flat") {
+      state "default", label:"Netflix", action:"netflix", icon:"st.Electronics.electronics12"
     }
 
-    standardTile("disneyjr", "device.switch", inactiveLabel: false, decoration: "flat") {
-      state "default", label:"Disney Jr.", action:"disneyjr", icon:"st.Electronics.electronics12"
+    standardTile("plex", "device.switch", inactiveLabel: false, decoration: "flat") {
+      state "default", label:"Plex", action:"plex", icon:"st.Electronics.electronics12"
     }
 
     standardTile("hdmi1", "device.switch", inactiveLabel: false, decoration: "flat") {
@@ -69,7 +69,7 @@ metadata {
     }
 
     main "button"
-    details(["button", "refresh", "volume_mute", "volume_down", "volume_up", "hdmi1", "hdmi2", "hdmi3", "hdmi4", "nickjr", "disneyjr"])
+    details(["button", "refresh", "volume_mute", "volume_down", "volume_up", "hdmi1", "hdmi2", "hdmi3", "hdmi4", "netflix", "plex"])
   }
 }
 
@@ -121,12 +121,12 @@ def volume_mute() {
   keypress('VolumeMute')
 }
 
-def nickjr() {
-  launchApp('66595')
+def netflix() {
+  launchApp('12')
 }
 
-def disneyjr() {
-  launchApp('34278')
+def plex() {
+  launchApp('13535')
 }
 
 def hdmi1() {
